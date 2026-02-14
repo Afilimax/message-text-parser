@@ -1,0 +1,5 @@
+export * from "./pc-do-fafa.parser"
+export * from "./tj-gaming.parser"
+export * from "./skandar-souza-promocoes.parser"
+export * from "./ofertas-adrenaline.parser"
+export * from "./promocoes-do-tec.parser"
