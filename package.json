@@ -1,6 +1,7 @@
 {
   "name": "@afilimax/message-text-parser",
   "version": "0.1.0",
+  "description": "Esta é uma biblioteca focada em extrair dados de mensagens de ofertas enviadas por canais do Telegram brasileiros.",
   "type": "commonjs",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -19,7 +20,9 @@
     "access": "public"
   },
   "keywords": [
-    "marcuth"
+    "afilimax",
+    "offer parser",
+    "telegram message"
   ],
   "author": "Marcuth",
   "license": "MIT",
