@@ -1,6 +1,7 @@
 import { ParseContext } from "./interfaces/parse-contex.interface"
 import { OfferParser } from "./interfaces/offer-parser.interface"
 import { Offer, offerSchema } from "./schemas"
+import { isCouponOnly } from "./utils"
 
 export class MessageTextParser {
     private readonly parsers: OfferParser[] = []
@@ -10,6 +11,8 @@ export class MessageTextParser {
     }
 
     parse(text: string, context?: ParseContext): Offer | null {
+        if (isCouponOnly(text)) return null
+
         for (const parser of this.parsers) {
             if (!parser.canParse(text, context)) continue
 
