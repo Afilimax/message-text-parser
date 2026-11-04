@@ -23,7 +23,7 @@ export const pcDoFafaParser: OfferParser<TelegramParserMeta> = {
         return {
             title: collapseWhiteSpaces(removeEmojis(titleMatch[1])),
             price: {
-                value: parseBrl(priceMatch[1]),
+                value: parseBrl(priceMatch[1]) * 1000,
                 oldValue: null,
                 currency: "BRL",
             },

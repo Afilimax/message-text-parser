@@ -1,3 +1,3 @@
 export function parseBrl(value: string): number {
-    return Number(value.trim().replace(/\./g, "").replace(",", "."))
+    return Number(value.replace(/\./, "").replace(",", "."))
 }

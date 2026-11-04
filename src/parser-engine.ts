@@ -14,7 +14,7 @@ export class MessageTextParser {
             if (!parser.canParse(text, context)) continue
 
             const result = parser.parse(text, context)
-
+            
             if (!result) continue
 
             const validated = offerSchema.safeParse(result)

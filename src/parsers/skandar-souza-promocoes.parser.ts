@@ -29,7 +29,7 @@ export const skandarSouzaPromocoesParser: OfferParser<TelegramParserMeta> = {
         return {
             title: title,
             price: {
-                value: priceValue,
+                value: priceValue * 1000,
                 oldValue: null,
                 currency: "BRL",
             },

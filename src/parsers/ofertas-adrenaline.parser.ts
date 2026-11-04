@@ -27,7 +27,7 @@ export const ofertasAdrenalineParser: OfferParser<TelegramParserMeta> = {
         return {
             title: title,
             price: {
-                value: priceValue,
+                value: priceValue * 1000,
                 oldValue: null,
                 currency: "BRL",
             },
