@@ -1,5 +1,5 @@
-import { OfferParser, TelegramParserMeta } from "../interfaces"
 import { collapseWhiteSpaces, extractCoupons, parseBrl, removeEmojis } from "../utils"
+import { OfferParser, TelegramParserMeta } from "../interfaces"
 
 export const tjGamingParser: OfferParser<TelegramParserMeta> = {
     name: "tj-gaming",
@@ -23,7 +23,7 @@ export const tjGamingParser: OfferParser<TelegramParserMeta> = {
         return {
             title: collapseWhiteSpaces(removeEmojis(titleMatch[1])),
             price: {
-                value: parseBrl(priceMatch[1]) * 1000,
+                value: parseBrl(priceMatch[1]),
                 oldValue: null,
                 currency: "BRL",
             },

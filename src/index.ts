@@ -1,4 +1,10 @@
-import { pcDoFafaParser, tjGamingParser, ofertasAdrenalineParser, skandarSouzaPromocoesParser, promocoesDoTecParser } from "./parsers"
+import {
+    pcDoFafaParser,
+    tjGamingParser,
+    ofertasAdrenalineParser,
+    skandarSouzaPromocoesParser,
+    promocoesDoTecParser,
+} from "./parsers"
 import { MessageTextParser } from "./parser-engine"
 
 export const defaultParser = new MessageTextParser()
