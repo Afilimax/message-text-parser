@@ -27,6 +27,13 @@ describe("extractCoupons", () => {
         expect(extractCoupons("Cupom: cupom da loja")).toBeNull()
         expect(extractCoupons("Resgate o cupom aqui: https://x.com")).toBeNull()
     })
+
+    it("nunca trata link como cupom", () => {
+        expect(extractCoupons("Desconto: Cupom da loja\nhttps://s.click.aliexpress.com/e/_abc")).toBeNull()
+        expect(extractCoupons("Cupom da loja\n\nLink para compra: https://x.com")).toBeNull()
+        expect(extractCoupons("Cupom: https://s.click.aliexpress.com/e/_abc")).toBeNull()
+        expect(extractCoupons("Cupom\nTJGAMING")).toBeNull()
+    })
 })
 
 describe("removeEmojis", () => {
