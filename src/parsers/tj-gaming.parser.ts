@@ -1,5 +1,5 @@
-import { OfferParser, TelegramParserMeta } from "../interfaces"
 import { collapseWhiteSpaces, extractCoupons, parseBrl, removeEmojis } from "../utils"
+import { OfferParser, TelegramParserMeta } from "../interfaces"
 
 export const tjGamingParser: OfferParser<TelegramParserMeta> = {
     name: "tj-gaming",

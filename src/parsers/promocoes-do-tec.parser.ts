@@ -1,5 +1,5 @@
-import { OfferParser, TelegramParserMeta } from "../interfaces"
 import { collapseWhiteSpaces, extractCoupons, parseBrl, removeEmojis } from "../utils"
+import { OfferParser, TelegramParserMeta } from "../interfaces"
 
 export const promocoesDoTecParser: OfferParser<TelegramParserMeta> = {
     name: "promocoes-do-tec",
@@ -11,26 +11,21 @@ export const promocoesDoTecParser: OfferParser<TelegramParserMeta> = {
             return true
         }
 
-        if (
-            text.toLowerCase().includes("resgate aqui") &&
-            !text.includes("💲")
-        ) {
+        if (text.toLowerCase().includes("resgate aqui") && !text.includes("💲")) {
             return false
         }
-        
+
         return true
     },
     parse(text: string) {
         const lines = text
             .split("\n")
-            .map(l => l.trim())
+            .map((l) => l.trim())
             .filter(Boolean)
 
         if (!lines.length) return null
 
-        const title = lines[0]
-            .replace(/^🚨\s*/g, "")
-            .trim()
+        const title = lines[0].replace(/^🚨\s*/g, "").trim()
 
         const priceMatch = text.match(/💲\s*R\$\s*([\d.,]+)/i)
         const urlMatch = text.match(/https?:\/\/[^\s]+/i)
@@ -38,7 +33,6 @@ export const promocoesDoTecParser: OfferParser<TelegramParserMeta> = {
         if (!priceMatch || !urlMatch) return null
 
         const coupons = extractCoupons(text)
-
 
         return {
             title: collapseWhiteSpaces(removeEmojis(title)),
@@ -50,5 +44,5 @@ export const promocoesDoTecParser: OfferParser<TelegramParserMeta> = {
             url: urlMatch[0],
             coupons: coupons,
         }
-    }
+    },
 }
