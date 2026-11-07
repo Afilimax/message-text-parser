@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest"
+
 import { defaultParser } from "../src"
 import { extractCoupons, isCouponOnly, removeEmojis } from "../src/utils"
 
@@ -40,5 +42,12 @@ describe("removeEmojis", () => {
     it("preserva dígitos", () => {
         expect(removeEmojis("🔥 Mouse Motospeed V40 🔥")).toBe(" Mouse Motospeed V40 ")
         expect(removeEmojis("Ryzen 5 5600X 🇧🇷")).toBe("Ryzen 5 5600X ")
+    })
+})
+
+describe("isCouponOnly edge cases", () => {
+    it("returns false for empty text", () => {
+        expect(isCouponOnly("")).toBe(false)
+        expect(isCouponOnly("  \n ")).toBe(false)
     })
 })
