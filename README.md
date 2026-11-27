@@ -94,6 +94,7 @@ Se você quiser contribuir para o projeto, abra um issue ou envie uma pull reque
 ## Licença
 
 Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
 ---
 
 ## Automatize sua operação de afiliados
