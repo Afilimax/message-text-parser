@@ -45,5 +45,13 @@
   },
   "dependencies": {
     "zod": "^4.3.6"
+  },
+  "homepage": "https://afilimax.net",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Afilimax/message-text-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Afilimax/message-text-parser/issues"
   }
 }
